@@ -1,16 +1,22 @@
 from typing import List
 import math, random
 
-def repetition_error_probability(repetitions: int, p_flip: float = 0.1):
+def repetition_error_probability(repetitions: int, p_flip: float):
     p_error = 0.0
     for k in range((repetitions + 1) // 2, repetitions + 1):
         p_error += math.comb(repetitions, k) * (p_flip ** k) * ((1 - p_flip) ** (repetitions - k))
     return p_error
 
+def success_proba(repetitions: int, p_flip: float, message_len: int):
+    return (1 - repetition_error_probability(repetitions, p_flip)) ** message_len
+
 def send(message: List[int], repetitions: int) -> List[int]:
     encoded = []
     for bit in message:
-        encoded.extend([bit] * repetitions)
+        if bit not in [0, 1]:
+            raise Exception("Message must be a list of 0 and 1")
+        else:
+            encoded.extend([bit] * repetitions)
     return encoded
 
 def noise_channel(encoded: List[int], p_flip: float = 0.1) -> List[int]:
@@ -44,4 +50,4 @@ if __name__ == "__main__":
     print("Encoded: ", encoded)
     print("Noisy:   ", noisy)
     print("Decoded: ", decoded)
-    print("Decoded Proba Success:", 1 - repetition_error_probability(repetitions, p_flip))
+    print("Decoded Proba Success:", success_proba(repetitions=repetitions, p_flip=p_flip, message_len=len(message)))
