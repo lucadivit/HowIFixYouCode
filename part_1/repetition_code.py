@@ -41,6 +41,9 @@ if __name__ == "__main__":
     message = [0]
     repetitions = 3
     p_flip = 0.1
+    d_min = repetitions
+    s = d_min - 1
+    t = (d_min - 1) // 2
 
     encoded = send(message, repetitions)
     noisy = noise_channel(encoded, p_flip)
@@ -50,4 +53,6 @@ if __name__ == "__main__":
     print("Encoded: ", encoded)
     print("Noisy:   ", noisy)
     print("Decoded: ", decoded)
+    print("s: ", s)
+    print("t: ", t)
     print("Decoded Proba Success:", success_proba(repetitions=repetitions, p_flip=p_flip, message_len=len(message)))
