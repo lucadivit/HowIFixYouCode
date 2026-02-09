@@ -34,7 +34,7 @@ def noise_channel(encoded: List[int], p_flip: float = 0.1) -> List[int]:
 def parity_check(received: List[int]) -> bool:
     return sum(received) % 2 == 0
 
-def receive(received: List[int]) -> Tuple[List[int], bool]:
+def receive(received: List[int]) -> List[int]:
     print("Receiving Message ", received)
     is_valid = parity_check(received)
     payload = received[:-1]
@@ -43,7 +43,7 @@ def receive(received: List[int]) -> Tuple[List[int], bool]:
     else:
         print("Detected Error With Parity Check")
     print("Decoded Message: ", payload)
-    return payload, is_valid
+    return payload
 
 if __name__ == "__main__":
     message = [1, 1, 1, 0, 0, 1, 0]
@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     encoded = send(message)
     noisy = noise_channel(encoded, p_flip)
-    decoded_payload, is_valid = receive(noisy)
-
+    decoded = receive(noisy)
+    print("Is Message Equal: ", message == decoded)
     print("s: ", s)
     print("t: ", t)

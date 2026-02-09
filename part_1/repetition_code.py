@@ -78,6 +78,7 @@ if __name__ == "__main__":
     noisy = noise_channel(encoded, p_flip)
     decoded = receive(noisy, repetitions)
 
+    print("Is Message Equal: ", message == decoded)
     print("s: ", s)
     print("t: ", t)
     print("Decoded Proba Success:", success_proba(repetitions=repetitions, p_flip=p_flip, message_len=len(message)))
