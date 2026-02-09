@@ -8,7 +8,6 @@ def _validate_bits(bits: List[int]) -> None:
         raise ValueError("Message must be a list of 0 and 1")
 
 def compute_parity_bit(message: List[int]) -> int:
-    _validate_bits(message)
     return sum(message) % 2
 
 def send(message: List[int]) -> List[int]:
