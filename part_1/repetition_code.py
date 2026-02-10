@@ -58,9 +58,7 @@ def receive(noisy: List[int], repetitions: int) -> List[int]:
             if copy[bit_idx] != decoded_bit
         ]
         if corrected_positions:
-            print(
-                f"Corrected Bit At Position {corrected_positions[0]}"
-            )
+            print(f"Corrected Bit At Position {corrected_positions[0]}")
         decoded.append(decoded_bit)
     print("Decoded Message: ", decoded)
     return decoded
