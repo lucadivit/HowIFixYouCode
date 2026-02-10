@@ -16,6 +16,9 @@ Puoi eseguire gli esempi con:
 
 ```python
 python part_1/repetition_code.py
+
 python part_1/parity_check_1d.py
+
 python part_1/parity_check_2d.py
+
 ```
