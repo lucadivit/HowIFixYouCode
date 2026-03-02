@@ -1,6 +1,6 @@
 # How I Fix Your Code
 
-Questo repository contiene implementazioni Python dei codici a correzione/rilevazione discussi nell'articolo [**How I Fix Your Code**]() pubblicato sul mio blog.
+Questo repository contiene implementazioni Python dei codici a correzione/rilevazione discussi nell'articolo [**How I Fix Your Code**](https://www.lucadivita.it/en/crittografia-sicurezza/how-i-fix-your-code-1/) pubblicato sul mio blog.
 
 ## Struttura
 
