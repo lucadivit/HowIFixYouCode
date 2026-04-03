@@ -3,7 +3,7 @@
 Questo repository contiene implementazioni Python dei codici a rilevazione/correzione discussi nella serie **How I Fix Your Code** pubblicata sul mio blog.
 
 - Parte 1: [How I Fix Your Code - 1](https://www.lucadivita.it/en/crittografia-sicurezza/how-i-fix-your-code-1/)
-- Parte 2: [How I Fix Your Code - 2]()
+- Parte 2: [How I Fix Your Code - 2](https://www.lucadivita.it/en/crittografia-sicurezza/how-i-fix-your-code-2/)
 
 ## Struttura
 
